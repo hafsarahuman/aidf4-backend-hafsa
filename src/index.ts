@@ -29,7 +29,7 @@ app.use(express.json());
 // CORS setup — make sure FRONTEND_URL is set in your .env file
 app.use(
   cors({
-    origin: "http://localhost:5173",
+    origin: "https://aidf-horizone-frontend-hafsa.netlify.app",
     credentials: true,
   })
 );
