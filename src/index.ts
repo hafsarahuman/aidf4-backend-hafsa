@@ -11,7 +11,7 @@ import globalErrorHandlingMiddleware from "./api/middlewares/global-error-handli
 import { clerkMiddleware } from "@clerk/express";
 
 const app = express();
-const PORT = process.env.PORT || 8000;
+
 
 // Stripe webhook handler should come BEFORE express.json()
 app.post(
@@ -53,7 +53,6 @@ app.get("/", (req: Request, res: Response) => {
 });
 
 // Start the server
-app.listen(8000, () => {
-  console.log("Server is running on port 8000");
-});
+const PORT = process.env.PORT || 8000;
+app.listen(PORT, () => console.log(`Server is running on port ${PORT}...`));
 
