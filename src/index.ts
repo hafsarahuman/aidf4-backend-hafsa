@@ -28,10 +28,7 @@ app.use(express.json());
 
 // CORS setup — make sure FRONTEND_URL is set in your .env file
 app.use(
-  cors({
-    origin: "https://aidf-horizone-frontend-hafsa.netlify.app",
-    credentials: true,
-  })
+  cors()
 );
 
 // Connect to MongoDB
