@@ -3,9 +3,10 @@ import ForbiddenError from "../../domain/errors/ForbiddenError";
 
 
 export const isAuthorized = (req: Request, res: Response, next: NextFunction) => {
-  if (!(req?.auth?.sessionClaims?.role === "admin")) {
-    throw new ForbiddenError("Forbidden"); 
+  //@ts-ignore
+  if (req.auth.sessionClaims?.role !== "admin") {
+    throw new ForbiddenError("Only administrators are allowed to perform this action"); 
   }
-  console.log(req.auth);
+  
   next();
 };
